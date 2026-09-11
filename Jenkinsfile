@@ -3,9 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('checkout') {
             steps {
-                sh 'echo Building application'
+                Checkout scm
             }
         }
 
@@ -15,9 +15,9 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Build') {
             steps {
-                sh 'docker build -t myapp .'
+                sh 'echo Running build'
             }
         }
     }
